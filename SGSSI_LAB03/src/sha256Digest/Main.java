@@ -11,6 +11,11 @@ import java.security.NoSuchAlgorithmException;
 public class Main {
 	
 	public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
+		String path1="C:\\Users\\Enika\\Desktop\\UNI\\4TO\\SGSSI\\SGSSI-21.CB.04.txt";
+		String path2="C:\\Users\\Enika\\Desktop\\UNI\\4TO\\SGSSI\\SGSSI-21.CB.04.txtmodifiedtozero1MINGroup.txt";
+		if(comprobarArchivos(path1,path2)) {
+			System.out.println("Los dos archivos son correctos");
+		}
 	}
 
 	private static String sha256Digest(String path) throws IOException, NoSuchAlgorithmException {
@@ -210,6 +215,35 @@ public class Main {
 		fwtmp.close();
 		System.out.println("archivo creado");
 	}
+	//path1 es el archivo original
+	//path2 es el nuevo archivo con el HEX
+	private static boolean comprobarArchivos(String path1,String path2) throws IOException, NoSuchAlgorithmException {
+			BufferedReader br1 = new BufferedReader(new FileReader(path1));
+			BufferedReader br2 = new BufferedReader(new FileReader(path2));
+			
+			String line1 = br1.readLine();
+			String line2 = br2.readLine();
+			String sha=sha256Digest(path2);
+			if(sha.charAt(0)!='0') {
+				return false;
+			}
+			while((line1 != null) && (line2 != null)) {
+				if(!line1.equals(line2))
+					return false;
+				line1=br1.readLine();
+				line2=br2.readLine();
+			}
+			
+			if(line1 == null) {
+				if(!line2.matches("-?[0-9a-fA-F]{8}+\\s+G([0-3][0-9])+"))
+					return false;
+			}
+			
+			br1.close();
+			br2.close();
+			
+			return true;
+		}
 	private static int calcularceros(String sha) {
 		int ceros = 0;
 		for (int i = 0; i < sha.length(); i++) {
