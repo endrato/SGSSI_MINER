@@ -16,7 +16,12 @@ modifyFileToZero1MIN: Busca la mejor cadena hexadecimal de 8 caracteres, es deci
 
 modifyFileGroup1MinN: Hace lo mismo que el anterior sumandole a la cadena en cuestion el identificador del grupo.
 
+comprobarArchivos: Comprueba que un bloque sea correcto(sea igual que el anterior con su proof of work en hexadecimal+ el grupo)
+
 APUNTES-> en modifyFileToZero1MIN, se pueden hacer algunos ajustes para cambiar su utilidad, si cambiamos la condicion del while podemos utilizar bestzeros(una variable que cuenta la mayor cantidad de ceros encontrada) para crear la condicion de que no pare hasta encontrar un numero concreto de ceros.
 
 Ademas, hay un if que devuelve la cadena necesaria cada vez que se encuentra un sha de 4 ceros, se puede modificar si queremos uno con mas o menos ceros.
-SHA OF CODE:c5e0b370c0308662ae8dce2aa8ecf0c993d4b354e69daba8ba4eb6d9c6197dc6
+SHA OF CODE:46235080f104c62de844cb1ba257c8187f679811fbd67b1664c6a6a2ec3be273
+
+
+//Parte del codigo se ha extraido del repositorio https://github.com/gorokotkd/SGSSI
