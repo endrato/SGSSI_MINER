@@ -13,6 +13,7 @@ public class Main {
 	public static void main(String[] args) throws NoSuchAlgorithmException, IOException {
 		String path1="C:\\Users\\Enika\\Desktop\\UNI\\4TO\\SGSSI\\SGSSI-21.CB.04.txt";
 		String path2="C:\\Users\\Enika\\Desktop\\UNI\\4TO\\SGSSI\\SGSSI-21.CB.04.txtmodifiedtozero1MINGroup.txt";
+		modifyFileGroup1Min(path1,"G222430");
 		if(comprobarArchivos(path1,path2)) {
 			System.out.println("Los dos archivos son correctos");
 		}
@@ -184,7 +185,7 @@ public class Main {
 		long start = System.currentTimeMillis();
 		int bestzeros = 0;
 		long timeElapsed =0;
-		while(timeElapsed < 60000) {
+		while(timeElapsed < 600000) {
 			FileWriter fw = new FileWriter(path+"modifiedtozero1MINGroup.txt");
 			String generatedString = randomString(8);		
 			escritor=escritoraux+generatedString+" "+group;
