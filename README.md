@@ -21,7 +21,8 @@ comprobarArchivos: Comprueba que un bloque sea correcto(sea igual que el anterio
 APUNTES-> en modifyFileToZero1MIN, se pueden hacer algunos ajustes para cambiar su utilidad, si cambiamos la condicion del while podemos utilizar bestzeros(una variable que cuenta la mayor cantidad de ceros encontrada) para crear la condicion de que no pare hasta encontrar un numero concreto de ceros.
 
 Ademas, hay un if que devuelve la cadena necesaria cada vez que se encuentra un sha de 4 ceros, se puede modificar si queremos uno con mas o menos ceros.
-SHA OF CODE:46235080f104c62de844cb1ba257c8187f679811fbd67b1664c6a6a2ec3be273
+
+MD5 OF CODE:dd6d6d1ee205673906c68f0329bd4a1f
 
 
 //Parte del codigo se ha extraido del repositorio https://github.com/gorokotkd/SGSSI
